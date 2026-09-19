@@ -1,0 +1,17 @@
+# Keycloak 등 외부 IdP를 직접 쓸 예정이므로 dex(OIDC 중계기)는 비활성화
+dex:
+  enabled: false
+
+notifications:
+  enabled: false
+
+configs:
+  params:
+    # Traefik에서 TLS 종료하므로 ArgoCD는 평문 HTTP로 서비스
+    server.insecure: true
+
+server:
+  ingress:
+    enabled: true
+    ingressClassName: traefik
+    hostname: argocd.192.168.64.10.sslip.io

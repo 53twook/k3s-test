@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sample-content
+data:
+  index.json: |
+    {"message":"ArgoCD GitOps 동기화 정상","owner":"infra","revision":"1"}
